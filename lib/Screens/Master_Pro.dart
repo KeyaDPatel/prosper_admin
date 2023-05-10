@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
-class card2 extends StatelessWidget {
-  const card2({Key? key}) : super(key: key);
+class MasterProductServices extends StatefulWidget {
+  const MasterProductServices({Key? key}) : super(key: key);
 
+  @override
+  State<MasterProductServices> createState() => _MasterProductServicesState();
+}
+
+class _MasterProductServicesState extends State<MasterProductServices> {
+  String selectedValue = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,9 +90,9 @@ class card2 extends StatelessWidget {
             ),
             SizedBox(height: 24),
             SizedBox(
-              child: Column(
+              child: Row(
                 children: [
-                  const Text(
+                  Text(
                     "MasterProductService Type:",
                     style: TextStyle(
                       fontSize: 16,
@@ -94,12 +100,34 @@ class card2 extends StatelessWidget {
                       color: Colors.black,
                     ),
                   ),
-                  // const SizedBox(width: 10),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('Add Master Product Service', style: TextStyle(fontSize: 12)),
+                  Radio(
+                    value: true,
+                    groupValue: selectedValue as String?,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedValue = (value as String?)!;
+                      });
+                    },
                   ),
+                  Text('one'),
+                  Radio(
+                    value: false,
+                    groupValue: selectedValue as String?,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedValue = (value as String?)!;
+                      });
+                    },
+                  ),
+                  Text('two'),
                 ],
+              ),
+            ),
+            SizedBox(height: 30),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {},
+                child: const Text('Add Master Product Service', style: TextStyle(fontSize: 12)),
               ),
             ),
           ],

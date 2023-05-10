@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
-class card1 extends StatelessWidget {
-  const card1({Key? key}) : super(key: key);
+class ProductServiceCategory extends StatefulWidget {
+  const ProductServiceCategory({Key? key}) : super(key: key);
 
+  @override
+  State<ProductServiceCategory> createState() => _ProductServiceCategoryState();
+}
+
+class _ProductServiceCategoryState extends State<ProductServiceCategory> {
+  String selectedValue = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +62,7 @@ class card1 extends StatelessWidget {
                   borderSide: BorderSide.none,
                 ),
                 contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
               ),
             ),
             SizedBox(height: 16),
@@ -79,14 +85,14 @@ class card1 extends StatelessWidget {
                   borderSide: BorderSide.none,
                 ),
                 contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
               ),
             ),
             SizedBox(height: 24),
             SizedBox(
               child: Row(
                 children: [
-                  const Text(
+                  Text(
                     "Category Type:",
                     style: TextStyle(
                       fontSize: 16,
@@ -94,12 +100,34 @@ class card1 extends StatelessWidget {
                       color: Colors.black,
                     ),
                   ),
-                  const SizedBox(width: 139),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('Add Category', style: TextStyle(fontSize: 12)),
+                  Radio(
+                    value: true,
+                    groupValue: selectedValue as String?,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedValue = (value as String?)!;
+                      });
+                    },
                   ),
+                  Text('one'),
+                  Radio(
+                    value: false,
+                    groupValue: selectedValue as String?,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedValue = (value as String?)!;
+                      });
+                    },
+                  ),
+                  Text('two'),
                 ],
+              ),
+            ),
+            SizedBox(height: 30),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {},
+                child: const Text('Add Category', style: TextStyle(fontSize: 12)),
               ),
             ),
           ],

@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
-class card4 extends StatelessWidget {
+class CreateCompany extends StatefulWidget {
+  const CreateCompany({Key? key}) : super(key: key);
 
+  @override
+  State<CreateCompany> createState() => _CreateCompanyState();
+}
+
+class _CreateCompanyState extends State<CreateCompany> {
   String dropdownValue = 'Choose';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +37,7 @@ class card4 extends StatelessWidget {
                 ],
               ),
               child:
-                  Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 Center(
                   child: Text(
                     "Add Company Details Here ",
@@ -63,7 +68,7 @@ class card4 extends StatelessWidget {
                       borderSide: BorderSide.none,
                     ),
                     contentPadding:
-                        const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                   ),
                 ),
                 SizedBox(height: 16),
@@ -86,7 +91,7 @@ class card4 extends StatelessWidget {
                       borderSide: BorderSide.none,
                     ),
                     contentPadding:
-                        const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                   ),
                 ),
                 SizedBox(height: 16),
@@ -109,7 +114,7 @@ class card4 extends StatelessWidget {
                       borderSide: BorderSide.none,
                     ),
                     contentPadding:
-                        const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                   ),
                 ),
                 SizedBox(height: 16),
@@ -132,7 +137,7 @@ class card4 extends StatelessWidget {
                       borderSide: BorderSide.none,
                     ),
                     contentPadding:
-                        const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                   ),
                 ),
                 SizedBox(height: 16),
@@ -157,104 +162,107 @@ class card4 extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 16),
-          Text(
-            "Description:",
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            ),
-          ),
-          SizedBox(height: 8),
-          TextFormField(
-            decoration: InputDecoration(
-              hintText: "Enter description",
-              filled: true,
-              fillColor: Colors.grey[100],
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(8)),
-                borderSide: BorderSide.none,
-              ),
-              contentPadding:
-              const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-            ),
-          ),
-          SizedBox(height: 16),
-          Text(
-            "Tagline:",
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            ),
-          ),
-          SizedBox(height: 8),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        hintText: "Enter tagline",
-                        filled: true,
-                        fillColor: Colors.grey[100],
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(8)),
-                          borderSide: BorderSide.none,
-                        ),
-                        contentPadding:
-                        const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                      ),
+                Text(
+                  "Description:",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+                SizedBox(height: 8),
+                TextFormField(
+                  decoration: InputDecoration(
+                    hintText: "Enter description",
+                    filled: true,
+                    fillColor: Colors.grey[100],
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                      borderSide: BorderSide.none,
                     ),
-                    SizedBox(height: 16),
-                    Text(
-                      "Social Media Links:",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                    contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                  ),
+                ),
+                SizedBox(height: 16),
+                Text(
+                  "Tagline:",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+                SizedBox(height: 8),
+                TextFormField(
+                  decoration: InputDecoration(
+                    hintText: "Enter tagline",
+                    filled: true,
+                    fillColor: Colors.grey[100],
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                      borderSide: BorderSide.none,
                     ),
-                    DropdownButton<String>(
-                      value: dropdownValue,
-                      icon: const Icon(Icons.arrow_drop_down),
-                      iconSize: 24,
-                      elevation: 16,
-                      style: const TextStyle(color: Colors.black),
-                      underline: Container(
-                        height: 2,
-                        color: Colors.black,
-                      ),
-                      onChanged: (String? newValue) {},
-                      items: <String>['Choose', 'Facebook', 'Twitter', 'Instagram', 'LinkedIn']
-                          .map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
+                    contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                  ),
+                ),
+                SizedBox(height: 16),
+                Text(
+                  "Social Media Links:",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+                DropdownButton<String>(
+                  value: dropdownValue,
+                  icon: const Icon(Icons.arrow_drop_down),
+                  iconSize: 24,
+                  elevation: 16,
+                  style: const TextStyle(color: Colors.black),
+                  underline: Container(
+                    height: 2,
+                    color: Colors.black,
+                  ),
+                  onChanged: (String? newValue) {},
+                  items: <String>['Choose', 'Facebook', 'Twitter', 'Instagram', 'LinkedIn']
+                      .map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                ),
+                SizedBox(height: 20),
+                TextFormField(
+                  decoration: InputDecoration(
+                    hintText: "Enter Link here",
+                    filled: true,
+                    fillColor: Colors.grey[100],
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                      borderSide: BorderSide.none,
                     ),
-                    SizedBox(height: 20),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        hintText: "Enter Link here",
-                        filled: true,
-                        fillColor: Colors.grey[100],
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(8)),
-                          borderSide: BorderSide.none,
-                        ),
-                        contentPadding:
-                        const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: Text("Add More"),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: Text("Add Company"),
-                    ),
-                  ]
-                  )
+                    contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                  ),
+                ),
+                SizedBox(height: 5),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Text("Add More"),
+                ),
+                SizedBox(height: 20),
+                Center(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text("Add Company"),
+                  ),
+                ),
+              ]
+              )
           ),
         )
     );
